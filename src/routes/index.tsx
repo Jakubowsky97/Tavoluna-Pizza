@@ -1,32 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
-import { useServerFn } from "@tanstack/react-start";
-import { getGoogleReviews } from "@/lib/reviews.functions";
 
 const images = {
   antipasti: "/images/antipasti.jpg",
-  cocktail: "/images/cocktail.jpg",
-  facade: "/images/facade-sapori.jpg",
+  cocktail: "/images/cocktail-tavoluna.jpg",
+  facade: "/images/facade-tavoluna.jpg",
   interiorBanquette: "/images/interior-banquette.jpg",
-  neonSapori: "/images/neon-sapori.jpg",
+  neonTavoluna: "/images/neon-tavoluna.jpg",
   pizzaMargherita: "/images/pizza-margherita.jpg",
   pizzaProsciutto: "/images/pizza-prosciutto.jpg",
-  windowView: "/images/window-view.jpg",
+  windowView: "/images/window-view-tavoluna.jpg",
 } as const;
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sapori Sandomierz — Pizzeria na Rynku" },
+      { title: "Tavoluna — fikcyjna pizzeria na Rynku" },
       {
         name: "description",
         content:
-          "Pizzeria Sapori — autentyczna włoska pizza z pieca w sercu sandomierskiej Starówki. Rynek 29, Sandomierz.",
+          "Tavoluna to fikcyjna włoska pizzeria stworzona na potrzeby prezentacji projektu portfolio.",
       },
-      { property: "og:title", content: "Sapori Sandomierz — Pizzeria na Rynku" },
+      { property: "og:title", content: "Tavoluna — fikcyjna pizzeria na Rynku" },
       {
         property: "og:description",
-        content: "Autentyczna włoska pizza w sercu sandomierskiej Starówki.",
+        content: "Koncepcyjna strona włoskiej pizzerii przygotowana jako projekt portfolio.",
       },
       { property: "og:image", content: images.pizzaProsciutto },
       { name: "twitter:image", content: images.pizzaProsciutto },
@@ -50,9 +47,9 @@ const menu = {
     { name: "Diavola", desc: "Pikantne salami, mozzarella, papryczki chili, oliwa", price: "42" },
     { name: "Quattro Formaggi", desc: "Mozzarella, gorgonzola, parmezan, ser kozi", price: "44" },
   ],
-  "Specialità Sapori": [
+  "Specialità Tavoluna": [
     {
-      name: "Sapori della Casa",
+      name: "Tavoluna della Casa",
       desc: "Mozzarella, prosciutto crudo, rukola, pomidorki, płatki parmezanu",
       price: "48",
     },
@@ -104,7 +101,7 @@ function Nav() {
           className="font-display text-2xl font-bold tracking-tight text-cream"
           style={{ color: "var(--cream)" }}
         >
-          Sapori<span style={{ color: "var(--gold)" }}>.</span>
+          Tavoluna<span style={{ color: "var(--gold)" }}>.</span>
         </a>
         <nav className="hidden gap-8 text-sm font-medium md:flex" style={{ color: "var(--cream)" }}>
           <a href="#story" className="opacity-90 transition hover:opacity-100">
@@ -134,7 +131,7 @@ function Hero() {
     <section className="relative min-h-screen overflow-hidden">
       <img
         src={images.pizzaProsciutto}
-        alt="Pizza z szynką parmeńską i rukolą — Sapori Sandomierz"
+        alt="Pizza z szynką parmeńską i rukolą — Tavoluna"
         width={1536}
         height={1536}
         className="absolute inset-0 h-full w-full object-cover"
@@ -151,7 +148,8 @@ function Hero() {
           className="mb-6 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.3em]"
           style={{ color: "var(--gold)" }}
         >
-          <span className="h-px w-10" style={{ background: "var(--gold)" }} /> Sandomierz · Rynek 29
+          <span className="h-px w-10" style={{ background: "var(--gold)" }} /> Kamienne Wzgórze ·
+          Rynek 12
         </p>
         <h1
           className="max-w-4xl font-display text-5xl font-bold leading-[1.02] tracking-tight md:text-7xl lg:text-8xl"
@@ -161,7 +159,7 @@ function Hero() {
           <em className="italic font-medium" style={{ color: "var(--gold)" }}>
             w sercu
           </em>{" "}
-          sandomierskiej Starówki.
+          starego miasta.
         </h1>
         <p
           className="mt-8 max-w-xl text-lg leading-relaxed"
@@ -214,9 +212,9 @@ function Story() {
             .
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Sapori powstało z miłości do tradycyjnej kuchni włoskiej — tej, w której najmniej znaczy
-            najwięcej. Ciasto dojrzewa u nas 48 godzin, sos przygotowujemy z pomidorów San Marzano,
-            a mozzarellę sprowadzamy prosto z Kampanii.
+            Tavoluna powstało z miłości do tradycyjnej kuchni włoskiej — tej, w której najmniej
+            znaczy najwięcej. Ciasto dojrzewa u nas 48 godzin, sos przygotowujemy z pomidorów San
+            Marzano, a mozzarellę sprowadzamy prosto z Kampanii.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             Każdą pizzę wypiekamy w piecu w temperaturze 450°C — tak, jak robi się to w Neapolu od
@@ -228,13 +226,13 @@ function Story() {
           >
             <Stat n="48h" l="dojrzewania ciasta" />
             <Stat n="450°" l="temperatura pieca" />
-            <Stat n="4.6★" l="opinii gości" />
+            <Stat n="4.9★" l="opinii gości" />
           </div>
         </div>
         <div className="relative">
           <img
             src={images.pizzaMargherita}
-            alt="Margherita z pieca — Sapori"
+            alt="Margherita z pieca — Tavoluna"
             width={1440}
             height={1440}
             loading="lazy"
@@ -290,17 +288,16 @@ function Gallery() {
             </h2>
           </div>
           <p className="max-w-sm text-muted-foreground">
-            Kawałek Włoch w sandomierskiej kamienicy — neon, czerwone aksamity i talerze pełne
-            koloru.
+            Kawałek Włoch w zabytkowej kamienicy — neon, czerwone aksamity i talerze pełne koloru.
           </p>
         </div>
 
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-          <GalleryTile src={images.facade} alt="Wejście do Sapori, Rynek 29" tall />
-          <GalleryTile src={images.neonSapori} alt="Neon Sapori we wnętrzu" />
+          <GalleryTile src={images.facade} alt="Wejście do Tavoluna, Rynek 12" tall />
+          <GalleryTile src={images.neonTavoluna} alt="Neon Tavoluna we wnętrzu" />
           <GalleryTile src={images.antipasti} alt="Antipasti — caprese i sałatki" />
-          <GalleryTile src={images.cocktail} alt="Drink przy neonie Sapori" tall />
-          <GalleryTile src={images.windowView} alt="Widok z okna na Bramę Opatowską" />
+          <GalleryTile src={images.cocktail} alt="Drink przy neonie Tavoluna" tall />
+          <GalleryTile src={images.windowView} alt="Widok z okna na fikcyjne stare miasto" />
           <GalleryTile src={images.pizzaProsciutto} alt="Pizza z prosciutto i rukolą" />
         </div>
       </div>
@@ -397,7 +394,7 @@ function Visit() {
         <div className="relative overflow-hidden rounded-sm">
           <img
             src={images.interiorBanquette}
-            alt="Wnętrze pizzerii Sapori"
+            alt="Wnętrze pizzerii Tavoluna"
             width={720}
             height={1090}
             loading="lazy"
@@ -419,45 +416,41 @@ function Visit() {
             .
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Znajdziesz nas w samym sercu sandomierskiej Starówki — zarezerwuj stolik z widokiem na
-            Rynek.
+            W tej fikcyjnej historii znajdziesz nas w samym sercu starego miasta — przy rynku
+            Kamiennego Wzgórza.
           </p>
 
           <div className="mt-10 space-y-6 border-t pt-8" style={{ borderColor: "var(--border)" }}>
-            <InfoRow label="Adres" value="Rynek 29, 27-600 Sandomierz" />
+            <InfoRow label="Adres" value="Rynek 12, 00-000 Kamienne Wzgórze" />
             <InfoRow label="Godziny" value={<div>Codziennie: 12:00 – 22:00</div>} />
             <InfoRow
               label="Kontakt"
               value={
                 <div>
                   <a
-                    href="https://www.facebook.com/p/Sapori-Sandomierz-61571400634935/"
-                    target="_blank"
-                    rel="noreferrer"
+                    href="mailto:hello@tavoluna.example"
                     className="underline-offset-4 hover:underline"
                     style={{ color: "var(--terracotta)" }}
                   >
-                    Facebook.com/Sapori Sandomierz
+                    hello@tavoluna.example
                   </a>
                   <br />
                   <a
-                    href="https://www.instagram.com/sapori_sandomierz/"
-                    target="_blank"
-                    rel="noreferrer"
+                    href="tel:+48000000000"
                     className="underline-offset-4 hover:underline"
                     style={{ color: "var(--terracotta)" }}
                   >
-                    Instagram.com/Sapori Sandomierz
+                    +48 000 000 000
                   </a>
+                  <br />
+                  <span>Media społecznościowe · profile demonstracyjne</span>
                 </div>
               }
             />
           </div>
 
           <a
-            href="https://maps.app.goo.gl/f2RdFFQTzkAKZUyh8"
-            target="_blank"
-            rel="noreferrer"
+            href="mailto:hello@tavoluna.example?subject=Rezerwacja%20stolika"
             className="mt-10 inline-flex w-fit rounded-full px-7 py-4 text-sm font-semibold transition hover:scale-105"
             style={{
               background: "var(--gradient-warm)",
@@ -465,7 +458,7 @@ function Visit() {
               boxShadow: "var(--shadow-soft)",
             }}
           >
-            Otwórz w Mapach Google →
+            Zapytaj o stolik →
           </a>
         </div>
       </div>
@@ -484,48 +477,35 @@ function InfoRow({ label, value }: { label: string; value: React.ReactNode }) {
   );
 }
 
-const fallbackReviews = [
+const reviews = [
   {
     name: "Anna K.",
     rating: 5,
-    date: "2 tygodnie temu",
-    text: "Najlepsza pizza w Sandomierzu! Cienkie, chrupiące ciasto i świetne składniki. Obsługa bardzo miła, klimat wnętrza cudowny — polecam każdemu odwiedzającemu Starówkę.",
+    date: "opinia demonstracyjna",
+    text: "Cienkie, chrupiące ciasto i świetne składniki. Obsługa bardzo miła, a klimat wnętrza cudowny — chętnie tu wrócę.",
   },
   {
     name: "Marek W.",
     rating: 5,
-    date: "miesiąc temu",
+    date: "opinia demonstracyjna",
     text: "Prosciutto e funghi rewelacja, ciasto idealne. Widok z okna na Rynek bezcenny. Wrócimy na pewno!",
   },
   {
     name: "Karolina P.",
     rating: 5,
-    date: "3 tygodnie temu",
-    text: "Klimat jak we Włoszech — neon, aksamity, świetne aperolki. Pizza Sapori della Casa to mistrzostwo. Obsługa szybka i uśmiechnięta.",
+    date: "opinia demonstracyjna",
+    text: "Klimat jak we Włoszech — neon, aksamity i świetne aperitivi. Pizza Tavoluna della Casa to mistrzostwo.",
   },
   {
     name: "Tomasz R.",
     rating: 5,
-    date: "2 miesiące temu",
+    date: "opinia demonstracyjna",
     text: "Diavola z prawdziwą ostrością, mozzarella ciągnąca się aż miło. Najlepsza włoska kuchnia w mieście, bez dwóch zdań.",
   },
 ];
 
 function Reviews() {
-  const fetchReviews = useServerFn(getGoogleReviews);
-  const { data } = useQuery({
-    queryKey: ["google-reviews"],
-    queryFn: () => fetchReviews(),
-    staleTime: 1000 * 60 * 60 * 6, // 6h
-  });
-
-  const items =
-    (data?.reviews?.length ?? 0) > 0
-      ? data!.reviews.map((r) => ({ name: r.author, rating: r.rating, date: r.date, text: r.text }))
-      : fallbackReviews;
-  const ratingDisplay = data?.rating != null ? data.rating.toFixed(1) : "4.6";
-  const totalDisplay =
-    data?.total != null ? `na podstawie ${data.total} opinii Google` : "na podstawie opinii Google";
+  const ratingDisplay = "4.9";
 
   return (
     <section
@@ -543,9 +523,9 @@ function Reviews() {
               Opinie gości
             </p>
             <h2 className="font-display text-4xl font-bold leading-tight md:text-5xl">
-              Co mówią o nas{" "}
+              Co mówią nasi{" "}
               <em className="italic font-medium" style={{ color: "var(--basil)" }}>
-                na Google
+                goście
               </em>
               .
             </h2>
@@ -561,14 +541,14 @@ function Reviews() {
                 ))}
               </div>
               <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
-                {totalDisplay}
+                przykładowa ocena
               </div>
             </div>
           </div>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {items.map((r) => (
+          {reviews.map((r) => (
             <article
               key={r.name}
               className="flex flex-col rounded-sm bg-card p-7"
@@ -590,17 +570,9 @@ function Reviews() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <a
-            href="https://www.google.com/search?q=Pizzeria+Sapori+Sandomierz+opinie"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-semibold underline-offset-4 hover:underline"
-            style={{ color: "var(--terracotta)" }}
-          >
-            Zobacz wszystkie opinie w Google →
-          </a>
-        </div>
+        <p className="mt-12 text-center text-sm text-muted-foreground">
+          Fikcyjne opinie przygotowane wyłącznie na potrzeby prezentacji projektu.
+        </p>
       </div>
     </section>
   );
@@ -627,10 +599,10 @@ function Footer() {
     <footer className="border-t py-10" style={{ borderColor: "var(--border)" }}>
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-sm text-muted-foreground md:flex-row md:px-10">
         <div className="font-display text-xl font-bold" style={{ color: "var(--charcoal)" }}>
-          Sapori<span style={{ color: "var(--terracotta)" }}>.</span>{" "}
-          <span className="text-sm font-normal text-muted-foreground">Sandomierz</span>
+          Tavoluna<span style={{ color: "var(--terracotta)" }}>.</span>{" "}
+          <span className="text-sm font-normal text-muted-foreground">Kamienne Wzgórze</span>
         </div>
-        <div>© {new Date().getFullYear()} Pizzeria Sapori. Wszystkie prawa zastrzeżone.</div>
+        <div>Projekt koncepcyjny · marka, adres i opinie są fikcyjne.</div>
       </div>
     </footer>
   );

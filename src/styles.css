@@ -66,7 +66,7 @@
 
 :root {
   --radius: 0.5rem;
-  /* Sapori palette: warm cream, terracotta, basil, charcoal */
+  /* Tavoluna palette: warm cream, terracotta, basil, charcoal */
   --background: oklch(0.972 0.018 80);
   --foreground: oklch(0.205 0.025 40);
   --card: oklch(0.985 0.012 80);
@@ -100,7 +100,7 @@
   --sidebar-border: oklch(0.86 0.025 70);
   --sidebar-ring: oklch(0.55 0.17 35);
 
-  /* Sapori brand tokens */
+  /* Tavoluna brand tokens */
   --charcoal: oklch(0.16 0.015 40);
   --cream: oklch(0.972 0.018 80);
   --terracotta: oklch(0.55 0.17 35);

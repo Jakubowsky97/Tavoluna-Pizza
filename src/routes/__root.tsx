@@ -76,21 +76,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sapori Sandomierz" },
+      { title: "Tavoluna — fikcyjna pizzeria" },
       {
         name: "description",
         content:
-          "Pizzeria Sapori w Sandomierzu — włoska pizza, menu, opinie i informacje o restauracji przy Rynku 29.",
+          "Koncepcyjna strona fikcyjnej pizzerii Tavoluna, przygotowana jako projekt portfolio.",
       },
-      { name: "author", content: "Sapori Sandomierz" },
-      { property: "og:title", content: "Sapori Sandomierz" },
-      { property: "og:description", content: "Włoska pizza w sercu sandomierskiej Starówki." },
+      { name: "author", content: "Projekt portfolio" },
+      { property: "og:title", content: "Tavoluna — fikcyjna pizzeria" },
+      { property: "og:description", content: "Koncepcyjna strona włoskiej pizzerii." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Sapori Sandomierz" },
-      { name: "twitter:description", content: "Włoska pizza w sercu sandomierskiej Starówki." },
+      { name: "twitter:title", content: "Tavoluna — fikcyjna pizzeria" },
+      { name: "twitter:description", content: "Koncepcyjna strona włoskiej pizzerii." },
     ],
     links: [
+      {
+        rel: "icon",
+        type: "image/png",
+        href: "/favicon.png",
+      },
       {
         rel: "stylesheet",
         href: appCss,
